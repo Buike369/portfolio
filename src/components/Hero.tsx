@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
       >
         <div className="relative w-[320px] md:w-[480px]">
           <motion.img
-            src="/bkPo2.png"
+            src="/bkMan.jpeg"
             alt="Kingsley Chukwubuike - Fullstack Developer"
             className="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-500"
             whileHover={{ scale: 1.05 }}
