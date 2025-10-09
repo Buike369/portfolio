@@ -83,6 +83,11 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-white/10 p-8 rounded-2xl backdrop-blur-md shadow-lg border border-white/10 send"
+             style={{
+            backgroundColor: "#0e0f11",
+    border: "1px solid #1f1f1f"
+          }}
+       
         >
           <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
@@ -95,6 +100,7 @@ export default function ContactSection() {
               value={formData.name}
               onChange={handleChange}
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white"
+              style={{border: "1px solid #444749"}}
             />
             <input
               type="email"
@@ -104,6 +110,7 @@ export default function ContactSection() {
               value={formData.email}
               onChange={handleChange}
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white"
+              style={{border: "1px solid #444749"}}
             />
             <textarea
               name="message"
@@ -113,6 +120,7 @@ export default function ContactSection() {
               value={formData.message}
               onChange={handleChange}
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white resize-none"
+              style={{border: "1px solid #444749"}}
             />
 
             <button

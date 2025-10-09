@@ -96,8 +96,12 @@ const Projects: React.FC = () => {
               transition={{ duration: 0.5, delay: project.id * 0.1 }}
               whileHover={{ scale: 1.03 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
-              style={{backgroundColor: "#1b1d1d",
-    border: "1px solid #4e5564"}}
+              
+                   style={{
+            backgroundColor: "#0e0f11",
+    border: "1px solid #1f1f1f"
+          }}
+ 
             >
               {/* Image */}
               <div className="relative">

@@ -94,6 +94,10 @@ export default function TestimonialSection() {
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.6 }}
               className="bg-white/10 backdrop-blur-xl p-8 rounded-2xl shadow-xl max-w-md w-full border border-white/10"
+              style={{
+                backgroundColor: "#0e0f11",
+    border: "1px solid #1f1f1f"
+              }}
             >
               <Quote className="w-10 h-10 text-indigo-400 mb-4" style={{color:"#40a3a5"}}/>
               <p className="text-lg mb-6 text-gray-300 leading-relaxed">

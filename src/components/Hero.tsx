@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
 
 
         </div>
-        <div style={{marginTop:'50px',color:'gray'}}>FOLLOW ME IN </div>
+        <div style={{marginTop:'50px',color:'gray'}}>FOLLOW ME ON<sup style={{fontSize:"16px"}}>*</sup> </div>
          <div className="flex items-center gap-5 followMe">
           <Link
             href="https://www.facebook.com/share/1G14jgjQ9k/"

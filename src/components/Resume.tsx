@@ -21,11 +21,15 @@ interface Education {
   year: string;
 }
 
-interface Skill {
-  id: number;
-  name: string;
-  level: number;
-}
+// interface Skill {
+//   id: number;
+//   name: string;
+//   level: number;
+// }
+
+
+
+
 
 const experiences: Experience[] = [
   {
@@ -61,14 +65,14 @@ const education: Education[] = [
   },
 ];
 
-const skills: Skill[] = [
-  { id: 1, name: "React / Next.js", level: 95 },
-  { id: 2, name: "Node.js / Express", level: 90 },
-  { id: 3, name: "React Native", level: 88 },
-  { id: 4, name: "MySQL / PostgreSQL", level: 85 },
-  { id: 5, name: "TypeScript", level: 80 },
-  { id: 6, name: "Firebase / Cloud Integration", level: 75 },
-];
+// const skills: Skill[] = [
+//   { id: 1, name: "React / Next.js", level: 95 },
+//   { id: 2, name: "Node.js / Express", level: 90 },
+//   { id: 3, name: "React Native", level: 88 },
+//   { id: 4, name: "MySQL / PostgreSQL", level: 85 },
+//   { id: 5, name: "TypeScript", level: 80 },
+//   { id: 6, name: "Firebase / Cloud Integration", level: 75 },
+// ];
 
 const Resume: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"qualifications" | "skills">(
@@ -129,8 +133,8 @@ const Resume: React.FC = () => {
                   <div
                     key={edu.id}
                     className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all"
-                    style={{    backgroundColor: "rgb(27, 29, 29)",
-    border: "1px solid rgb(78, 85, 100)"}}
+                    style={{    backgroundColor: "#0e0f11",
+    border: "1px solid #1f1f1f"}}
                   >
                     <h4 className="text-lg font-semibold" style={{color:"#fff"}}>{edu.title}</h4>
                     <p className="text-sm text-gray-600" style={{color:'#c1c8d0'}}>{edu.school}</p>
@@ -150,8 +154,8 @@ const Resume: React.FC = () => {
                   <div
                     key={exp.id}
                     className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all"
-                    style={{    backgroundColor: "rgb(27, 29, 29)",
-    border: "1px solid rgb(78, 85, 100)"}}
+                    style={{    backgroundColor:  "#0e0f11",
+    border: "1px solid #1f1f1f"}}
                   >
                     <h4 className="text-lg font-semibold" style={{color:"#fff"}}>{exp.title}</h4>
                     <p className="text-sm text-gray-600" style={{color:'#c1c8d0'}}>{exp.company}</p>
@@ -165,35 +169,118 @@ const Resume: React.FC = () => {
             </div>
           </motion.div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold mb-8 text-center flex justify-center items-center gap-2" style={{color:"#fff"}}>
-              <Code2 className="text-blue-600" style={{color:"#40a3a5"}}/> Technical Skills
-            </h3>
-            <div className="space-y-6">
-              {skills.map((skill) => (
-                <div key={skill.id}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium" style={{color:"#fff"}}>{skill.name}</span>
-                    <span className="text-sm text-gray-600" style={{color:"#40a3a5"}}>{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 0.8 }}
-                      className="h-3 rounded-full "
-                      style={{backgroundColor:"#40a3a5"}}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          // <motion.div
+          //   initial={{ opacity: 0, y: 20 }}
+          //   whileInView={{ opacity: 1, y: 0 }}
+          //   transition={{ duration: 0.5 }}
+          //   className="max-w-3xl mx-auto"
+          // >
+          //   <h3 className="text-2xl font-bold mb-8 text-center flex justify-center items-center gap-2" style={{color:"#fff"}}>
+          //     <Code2 className="text-blue-600" style={{color:"#40a3a5"}}/> Technical Skills
+          //   </h3>
+          //   <div className="space-y-6">
+          //     {skills.map((skill) => (
+          //       <div key={skill.id}>
+          //         <div className="flex justify-between mb-2">
+          //           <span className="font-medium" style={{color:"#fff"}}>{skill.name}</span>
+          //           <span className="text-sm text-gray-600" style={{color:"#40a3a5"}}>{skill.level}%</span>
+          //         </div>
+          //         <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+          //           <motion.div
+          //             initial={{ width: 0 }}
+          //             whileInView={{ width: `${skill.level}%` }}
+          //             transition={{ duration: 0.8 }}
+          //             className="h-3 rounded-full "
+          //             style={{backgroundColor:"#40a3a5"}}
+          //           />
+          //         </div>
+          //       </div>
+          //     ))}
+          //   </div>
+          // </motion.div>
+
+
+     <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-3xl mx-auto text-center"
+    >
+      {/* Title */}
+      <h3
+        className="text-3xl font-bold mb-10 flex justify-center items-center gap-3"
+        style={{ color: "#fff" }}
+      >
+        <Code2 className="w-7 h-7" style={{ color: "#40a3a5" }} />
+        Technical Skills
+      </h3>
+
+      {/* Tech Stack Section */}
+      <div className="space-y-10 text-left">
+        {/* Frontend */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#0e0f11] p-6 rounded-2xl shadow-lg border border-[#1f1f1f]"
+        >
+          <h4 className="text-xl font-semibold mb-3" style={{ color: "#40a3a5" }}>
+            Frontend
+          </h4>
+          <p className="text-gray-300 leading-relaxed text-base">
+            ⚛ React &nbsp;|&nbsp; 📱 React Native &nbsp;|&nbsp; 🎯 Flutter &nbsp;|&nbsp; 🎨
+            JavaScript (ES6+) &nbsp;|&nbsp; ▲ Next.js
+          </p>
+        </motion.div>
+
+        {/* Backend */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#0e0f11] p-6 rounded-2xl shadow-lg border border-[#1f1f1f]"
+        >
+          <h4 className="text-xl font-semibold mb-3" style={{ color: "#40a3a5" }}>
+            Backend
+          </h4>
+          <p className="text-gray-300 leading-relaxed text-base">
+            🟢 Node.js &nbsp;|&nbsp; 🚂 Express.js &nbsp;|&nbsp; 🐍 Django &nbsp;|&nbsp; ☕ Java &nbsp;|&nbsp; 🧠 Python
+          </p>
+        </motion.div>
+
+        {/* Databases */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#0e0f11] p-6 rounded-2xl shadow-lg border border-[#1f1f1f]"
+        >
+          <h4 className="text-xl font-semibold mb-3" style={{ color: "#40a3a5" }}>
+            Databases
+          </h4>
+          <p className="text-gray-300 leading-relaxed text-base">
+            🐘 PostgreSQL &nbsp;|&nbsp; 🗄 MySQL &nbsp;|&nbsp; 🍃 MongoDB
+          </p>
+        </motion.div>
+
+        {/* Version Control */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#0e0f11] p-6 rounded-2xl shadow-lg border border-[#1f1f1f]"
+        >
+          <h4 className="text-xl font-semibold mb-3" style={{ color: "#40a3a5" }}>
+            Version Control
+          </h4>
+          <p className="text-gray-300 leading-relaxed text-base">
+            🧩 Git &nbsp;|&nbsp; 🐙 GitHub
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
+
+     
         )}
       </div>
     </section>
