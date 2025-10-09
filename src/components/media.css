@@ -1,0 +1,14 @@
+@media(max-width:768px){
+.heroDiv{
+margin-top: 126px !important;
+}
+.followMe{
+  justify-content: center;
+}
+.way{
+  text-align: center !important;
+}
+.send{
+  padding: 20px 10px !important;
+}
+}
