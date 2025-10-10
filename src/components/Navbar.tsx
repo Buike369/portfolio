@@ -36,15 +36,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className="fixed top-4 left-0 bg-white/70 backdrop-blur-md shadow-md z-50"
+      className="fixed top-4 left-0 bg-black/70 backdrop-saturate-10 backdrop-blur-md shadow-md z-50"
       style={{
         width: "100%",
         maxWidth: "1200px",
         left: "50%",
         transform: "translateX(-50%)",
         borderRadius: "5px",
-        background: "#1c1c1e",
+        // background: "#1c1c1e2f",
         border: "1px solid rgba(122, 122, 122, .2)",
+        // backgroundColor: "#ffffff14",
+    // backdropFilter: "blur(500px)"
       }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">

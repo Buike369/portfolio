@@ -21,13 +21,13 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.25 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#009e66] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
+          className="absolute top-0 left-0 w-[500px] h-[500px]  rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.25 }}
           transition={{ duration: 1.5, delay: 0.4 }}
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#2563eb] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
+          className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
         />
       </div>
 

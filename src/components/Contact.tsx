@@ -3,21 +3,92 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import React, { useState } from "react";
+import validator from "validator";
 import "./media.css"
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+
+  const [formData, setFormData] = useState<FormData>({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
+   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // clear error on typing
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Validate form inputs
+  const validateForm = (): boolean => {
+    const newErrors: Partial<FormData> = {};
+
+    if (validator.isEmpty(formData.name.trim())) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!validator.isEmail(formData.email.trim())) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (validator.isEmpty(formData.message.trim()) || formData.message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters long";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // valid if no errors
+  };
+
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle sending message (API or email service integration)
+  //   setSent(true);
+  //   setTimeout(() => setSent(false), 3000);
+  // };
+
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-    // Handle sending message (API or email service integration)
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    setSuccess(false);
+
+    if (!validateForm()) return; // stop if invalid
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contactMe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      setLoading(false);
+
+      if (data.success) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+      alert("Failed to send message. Check your connection.");
+    }
   };
 
   return (
@@ -102,6 +173,9 @@ export default function ContactSection() {
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white"
               style={{border: "1px solid #444749"}}
             />
+            {errors.name && (
+          <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+        )}
             <input
               type="email"
               name="email"
@@ -112,6 +186,9 @@ export default function ContactSection() {
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white"
               style={{border: "1px solid #444749"}}
             />
+               {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+        )}
             <textarea
               name="message"
               rows={5}
@@ -122,14 +199,23 @@ export default function ContactSection() {
               className="w-full p-3 bg-transparent border border-gray-600 rounded-xl focus:border-indigo-400 outline-none text-white resize-none"
               style={{border: "1px solid #444749"}}
             />
+              {errors.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+        )}
 
             <button
               type="submit"
+               disabled={loading}
               className="flex items-center justify-center gap-2 w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-xl transition-all font-medium"
               style={{backgroundColor:"#40a3a5"}}
             >
-              <Send className="w-4 h-4" /> {sent ? "Message Sent " : "Send Message"}
+              <Send className="w-4 h-4" /> {loading ? "Sending... " : "Send Message"}
             </button>
+            {success && (
+        <p className="text-green-600 text-center">
+          ✅ Message sent successfully!
+        </p>
+      )}
           </div>
         </motion.form>
       </div>

@@ -37,6 +37,7 @@
 import { Mulish, Roboto } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 
 
@@ -123,7 +124,11 @@ export default function RootLayout({
     <html lang="en" className={`${mulish.variable} ${roboto.variable}`}>
       <body
       className={roboto.className}
-      >{children}</body>
+      >
+        <AnimatedBackground />
+        {/* {children} */}
+         <main className="relative z-10">{children}</main>
+        </body>
     </html>
   );
 }

@@ -98,18 +98,18 @@ const Projects: React.FC = () => {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
               
                    style={{
-            backgroundColor: "#0e0f11",
-    border: "1px solid #1f1f1f"
+    //         backgroundColor: "#0e0f11",
+    // border: "1px solid #1f1f1f"
+
+    border: "1px solid #1f1f1f",
+    backgroundColor: "#ffffff14",
+    backdropFilter: "blur(43px)"
           }}
  
             >
               {/* Image */}
               <div className="relative">
-                {/* <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover"
-                /> */}
+               
                          <Image
                         src={project.image}      
                         alt={project.title} 

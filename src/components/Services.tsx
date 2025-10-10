@@ -77,8 +77,10 @@ const Services: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-blue-200 flex flex-col items-center text-center"
               style={{
-   backgroundColor: "#0e0f11",
-    border: "1px solid #1f1f1f"}}
+   border: "1px solid #1f1f1f",
+    backgroundColor: "#ffffff14",
+    backdropFilter: "blur(43px)"
+  }}
             >
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900" style={{color:"#fff"}}>
