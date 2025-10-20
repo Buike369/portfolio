@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="md:hidden bg-white shadow-lg"
           style={{
-            backgroundColor: "#1c1c1e",
+            backgroundColor: "#1a1a1a",
             borderTop: "1px solid #28282a",
           }}
         >
