@@ -199,8 +199,8 @@ const Resume: React.FC = () => {
             Frontend
           </h4>
           <p className="text-gray-300 leading-relaxed text-base">
-            ⚛ React &nbsp;|&nbsp; 📱 React Native &nbsp;|&nbsp; 🎯 Flutter &nbsp;|&nbsp; 🎨
-            JavaScript (ES6+) &nbsp;|&nbsp; ▲ Next.js
+             React &nbsp;|&nbsp;  React Native &nbsp;|&nbsp;  Flutter &nbsp;|&nbsp; 
+            JavaScript (ES6+) &nbsp;|&nbsp;  Next.js &nbsp;|&nbsp; TypeScript
           </p>
         </motion.div>
 
@@ -219,7 +219,7 @@ const Resume: React.FC = () => {
             Backend
           </h4>
           <p className="text-gray-300 leading-relaxed text-base">
-            🟢 Node.js &nbsp;|&nbsp; 🚂 Express.js &nbsp;|&nbsp; 🐍 Django &nbsp;|&nbsp; ☕ Java &nbsp;|&nbsp; 🧠 Python
+             Node.js &nbsp;|&nbsp;  Express.js &nbsp;|&nbsp;  Django &nbsp;|&nbsp;  Java &nbsp;|&nbsp;  Python
           </p>
         </motion.div>
 
@@ -238,7 +238,7 @@ const Resume: React.FC = () => {
             Databases
           </h4>
           <p className="text-gray-300 leading-relaxed text-base">
-            🐘 PostgreSQL &nbsp;|&nbsp; 🗄 MySQL &nbsp;|&nbsp; 🍃 MongoDB
+             PostgreSQL &nbsp;|&nbsp;  MySQL &nbsp;|&nbsp;  MongoDB
           </p>
         </motion.div>
 
@@ -257,7 +257,7 @@ const Resume: React.FC = () => {
             Version Control
           </h4>
           <p className="text-gray-300 leading-relaxed text-base">
-            🧩 Git &nbsp;|&nbsp; 🐙 GitHub
+             Git &nbsp;|&nbsp;  GitHub
           </p>
         </motion.div>
       </div>
