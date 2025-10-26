@@ -13,47 +13,50 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex flex-col md:flex-row items-center justify-center min-h-screen overflow-hidden px-6 md:px-16 text-white heroDiv"
+      className="lp"
     >
       {/* Decorative background blend layers */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
+      {/* <div className="absolute inset-0 overflow-hidden"> */}
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.25 }}
           transition={{ duration: 1.5 }}
           className="absolute top-0 left-0 w-[500px] h-[500px]  rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
-        />
-        <motion.div
+        /> */}
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.25 }}
           transition={{ duration: 1.5, delay: 0.4 }}
           className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
-        />
-      </div>
+        /> */}
+      {/* </div> */}
 
       {/* Left Side - Text */}
+      <div className="bksf">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-2xl text-center md:text-left space-y-6"
+        // className="relative z-10 max-w-2xl text-center md:text-left space-y-6"
+        className="we3"
       >
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-100" 
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-100 uiu" 
         >
         
                Hi, I{`'`}m {" "}
-          <span className="text-[#00e698] drop-shadow-lg" style={{color:"#40a3a5"}}>
+          <span className="text-[#00e698] drop-shadow-lg jj" style={{color:"#40a3a5"}}>
              Kingsley Chukwubuike
           </span>
-          {" "} a
+          {" "} <span className="aa"> a </span>
         </h1>
 
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-200" style={{color:"#40a3a5"}}>
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 tr" style={{color:"#40a3a5"}}>
           <Typewriter
             words={[
-              "Web Developer",
-              "App Developer",
+           
               "Fullstack Developer",
+              "Web Developer",
+              "Mobile Developer",
               "Tech Innovator",
             ]}
             loop={0}
@@ -65,12 +68,30 @@ const Hero: React.FC = () => {
           />
         </h2>
 
-        <p className="text-gray-300 text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
-          I design and develop scalable web and mobile experiences using modern
+              <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="rela"
+      >
+        <div className="relative w-[320px] md:w-[480px] kb">
+          <motion.img
+            src="/bkMan.jpeg"
+            alt="Kingsley Chukwubuike - Fullstack Developer"
+            className="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-500"
+            whileHover={{ scale: 1.05 }}
+          />
+          <div className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-tr from-[#40a3a566] to-[#000000] blur-2xl" />
+        </div>
+      </motion.div>
+
+        <p className="text-gray-300 text-lg max-w-md mx-auto md:mx-0 leading-relaxed rt">
+          I design and develop scalable web and mobile applications using modern
           technologies and am good at what I do.
         </p>
+   
 
-        <div className="flex justify-center md:justify-start gap-4 mt-8">
+        <div className="flex justify-center md:justify-start gap-4 mt-8 jud">
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05 }}
@@ -91,7 +112,7 @@ const Hero: React.FC = () => {
 
 
         </div>
-        <div style={{marginTop:'50px',color:'gray'}}>FOLLOW ME ON<sup style={{fontSize:"16px"}}>*</sup> </div>
+        <div style={{marginTop:'50px',color:'gray'}} className="Fol">FOLLOW ME ON<sup style={{fontSize:"16px"}}>*</sup> </div>
          <div className="flex items-center gap-5 followMe">
           <Link
             href="https://www.facebook.com/share/1G14jgjQ9k/"
@@ -132,7 +153,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 mt-12 md:mt-0"
+        className="relat"
       >
         <div className="relative w-[320px] md:w-[480px]">
           <motion.img
@@ -144,6 +165,7 @@ const Hero: React.FC = () => {
           <div className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-tr from-[#40a3a566] to-[#000000] blur-2xl" />
         </div>
       </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.div

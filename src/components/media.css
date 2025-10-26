@@ -1,6 +1,21 @@
 .fft{
 backdrop-filter: blur(1000px) !important;
 }
+.bksf{
+  display:flex;
+  align-items: center;
+  width:100%;
+  max-width: 1220px;
+  padding: 10px 10px ;
+  margin: 0 auto
+}
+.we3{
+  width: calc(70% - 4px);
+  padding:2px  0px 2px 15px
+}
+ .lp{
+    padding-top: 130px;
+  }
 
 @media(max-width:768px){
 .heroDiv{
@@ -8,6 +23,17 @@ margin-top: 126px !important;
 }
 .followMe{
   justify-content: center;
+}
+.uiu{
+  text-align: center;
+  font-size: 44px;
+  width:100% !important
+}
+.relat{
+  display: none;
+}
+.bksf{
+  flex-direction: column;
 }
 .way{
   text-align: center !important;
@@ -18,6 +44,51 @@ margin-top: 126px !important;
 .rea{
   font-size: 12px !important;
 }
+.we3{
+  width:100%;
+  padding:2px;
+}
 
+.jj::before {
+  content: "\A"; /* Line break character */
+  white-space: pre;
+}
+.aa::before {
+  content: "\A"; /* Line break character */
+  white-space: pre;
+}
+.tr{
+  text-align: center;
+  font-weight: bold !important;
+}
+.rt{
+  text-align: center !important;
+  margin: 0 auto;
+}
+.rela, .kb{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.kb{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.jud{
+  justify-content: center;
+}
+.Fol{
+  text-align: center;
+}
+}
 
+@media(max-width:1020px) and (min-width:769px){
+  .lp{
+    padding-top: 130px;
+  }
+}
+@media(min-width:769px){
+  .rela{
+    display:none;
+  }
 }
