@@ -55,6 +55,14 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Kingsley Chukwubuike | Full Stack Developer",
+ icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon.ico' }
+    ],
+    apple: '/apple-touch-icon.png'
+  },
   description:
     "Portfolio of Kingsley Chukwubuike, a full-stack developer specializing in React, React Native, Next.js, Express, MySQL, MongoDb and Solidity.",
   keywords:
@@ -66,14 +74,14 @@ export const metadata: Metadata = {
       "Building scalable E-commerce platforms, portfolio, co-operate websites, blogs, exchanges, mobile apps,  blockchain apps, and web systems globally.",
     url: "https://adane.vercel.app",
     type: "website",
-    images: [
-      {
-        url: "https://adane.vercel.app/preview.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kingsley Chukwubuike Portfolio",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "https://adane.vercel.app/preview.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Kingsley Chukwubuike Portfolio",
+    //   },
+    // ],
   },
   twitter: {
     card: "summary_large_image",
@@ -81,7 +89,7 @@ export const metadata: Metadata = {
     description:
       "Explore the portfolio of Kingsley, a global full-stack developer and founder of Adane Technology.",
     creator: "@AdaneTech",
-    images: ["https://adane.vercel.app/preview.jpg"],
+    // images: ["https://adane.vercel.app/preview.jpg"],
   },
   alternates: {
     canonical: "https://adane.vercel.app",
